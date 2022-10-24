@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ReaGame
@@ -17,7 +18,7 @@ namespace ReaGame
             InitializeComponent();
         }
 
-        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        private void ReaGameForm_KeyDown(object sender, KeyEventArgs e)
         {
             if (Target.Image == squareTarget.Image)
             {
@@ -35,16 +36,8 @@ namespace ReaGame
 
             if (Target.Image == circleTarget.Image)
             {
-                if (e.KeyCode == Keys.O)
-                {
-                    Target.Image = Properties.Resources.CircleSucceed;
-                    UpScore();
-                }
-                else
-                {
-                    Target.Image = Properties.Resources.CircleFailed;
-                    ReceiveDamage();
-                }
+                Target.Image = Properties.Resources.CircleFailed;
+                ReceiveDamage();
             }
 
             if (Target.Image == triangleTarget.Image)
@@ -62,8 +55,15 @@ namespace ReaGame
             }
         }
 
-        private void ChangeTargetTimer_Tick(object sender, EventArgs e)
+        private async void ChangeTargetTimer_Tick(object sender, EventArgs e)
         {
+            if (Target.Image == circleTarget.Image)
+            {
+                Target.Image = Properties.Resources.CircleSucceed;
+                UpScore();
+                await Task.Delay(500);
+            }
+
             switch (random.Next(0, 3))
             {
                 case 0:
@@ -163,7 +163,7 @@ namespace ReaGame
             ChangeTargetTimer.Start();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void ReaGameForm_Load(object sender, EventArgs e)
         {
             random = new Random();
             squareTarget = new PictureBox { Image = Properties.Resources.SquareTarget };

@@ -123,7 +123,7 @@ namespace ReaGame
             this.totalScoreLabel.Font = new System.Drawing.Font("MV Boli", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalScoreLabel.Location = new System.Drawing.Point(485, 101);
             this.totalScoreLabel.Name = "totalScoreLabel";
-            this.totalScoreLabel.Size = new System.Drawing.Size(264, 52);
+            this.totalScoreLabel.Size = new System.Drawing.Size(263, 52);
             this.totalScoreLabel.TabIndex = 6;
             this.totalScoreLabel.Text = "Your Score: ";
             this.totalScoreLabel.Visible = false;
@@ -134,7 +134,7 @@ namespace ReaGame
             this.totalScoreValue.Font = new System.Drawing.Font("MV Boli", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalScoreValue.Location = new System.Drawing.Point(578, 153);
             this.totalScoreValue.Name = "totalScoreValue";
-            this.totalScoreValue.Size = new System.Drawing.Size(51, 52);
+            this.totalScoreValue.Size = new System.Drawing.Size(50, 52);
             this.totalScoreValue.TabIndex = 7;
             this.totalScoreValue.Text = "0";
             this.totalScoreValue.Visible = false;
@@ -206,8 +206,8 @@ namespace ReaGame
             this.MaximizeBox = false;
             this.Name = "ReaGameForm";
             this.Text = "ReaGame";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.Load += new System.EventHandler(this.ReaGameForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ReaGameForm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.Target)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
